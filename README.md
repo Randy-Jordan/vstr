@@ -27,7 +27,7 @@ String View implementation written in C.
 
 ## Credits / Resources
 I found these resources extremely helpful. <br>
-[Voxel Rifts - Arenas, strings and scuffed templates in C](https://www.youtube.com/watch?v=3IAlJSIjvH0);
+[Voxel Rifts - Arenas, strings and scuffed templates in C](https://www.youtube.com/watch?v=3IAlJSIjvH0)<br>
 [Tsoding Daily](https://www.youtube.com/@TsodingDaily)<br>
 [Tsoding SV](https://github.com/tsoding/sv)<br>
 [Mongoose Webserver](https://github.com/cesanta/mongoose)<br>
