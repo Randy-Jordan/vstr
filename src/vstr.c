@@ -32,46 +32,6 @@ const char *vstr_str(const Vstr haystack, const Vstr needle){
     }
     return NULL;
 }
-Vstr vstr_chop(Vstr v, const char *delims){
-    if (v.buf == NULL || v.buf == NULL || v.len == 0 || delims == NULL) {
-        // Handle NULL pointer or empty string view
-        return vstr_n(NULL, 0);
-    }
-
-    size_t i = 0;
-    while (i < v.len) {
-        int is_delim = 0;
-        for (size_t j = 0; delims[j] != '\0'; j++) {
-            if (v.buf[i] == delims[j]) {
-                is_delim = 1;
-                break;
-            }
-        }
-        if (is_delim) {
-            break;
-        }
-        i++;
-    }
-
-    Vstr result = vstr_n(v.buf, i);
-
-    if (i < v.len) {
-        v.buf  += i + 1;
-        v.len -= i + 1;
-    } else {
-        v.buf  += i;
-        v.len -= i;
-    }
-
-    return result;
-}
-Vstr vstr_substr(Vstr v, size_t start, size_t stop){
-    if (start >= v.len || stop > v.len || start >= stop) {
-        return vstr_n(NULL, 0);
-    }
-    size_t sub_len = stop - start;
-    return vstr_n(v.buf+start,sub_len);
-}
 static bool is_space(int c) {
     return c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f';
 }
